@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手动点灯</title>
+    <style type="text/css">
+        #mylight{
+            position: relative;
+            top:10px;
+            left: 70px;
+        }
+        p{
+            color: aqua;
+            font-size: 26px;
+        }
+        #pic{
+            position: absolute;
+            top: 120px;
+            left: 550px;
+        }
+
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    function lightswitch()
+    {
+         var element=document.getElementById('mylight');
+        if(element.src.match("light")){
+            element.src="imgs/pic_dark.gif";}
+            else{
+                element.src="imgs/pic_light.gif";
+            }
+        }
+
+</script>
+<div id="pic">
+    <p>这是一个手动点击开关</p>
+<img id="mylight" src="imgs/pic_dark.gif" onclick="lightswitch()"></div>
+</body>
+</html>

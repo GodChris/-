@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>使颜色变淡</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("button").click(function() {
+				$("#div1").fadeTo("slow", 0.8);
+				$("#div2").fadeTo("slow", 0.4);
+				$("#div3").fadeTo("slow", 0.7);
+			});
+		});
+		/*
+		fadeTo()语法：$(selector).fadeTo(speed,opacity,callback);
+		speed：slow,fast,毫秒
+		opacity:将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）
+		*/
+	</script>
+</head>
+<body>
+<button>点我让颜色变淡</button>
+<br><br>
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+</body>
+</html>

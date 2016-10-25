@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变网页内容</title>
+</head>
+<body>
+<p id="demo">
+    你觉得自己长得帅吗？
+</p>
+<script>
+    var x;
+    function myFunction()
+    {
+        document.getElementById("demo").innerHTML="你是个丑八怪，还帅，恶心";
+    }
+    function  changecolor() {
+        x=document.getElementById("demo").style.color="blue";
+
+    }
+    function testnumber()
+    {
+        x=document.getElementById("input1").value;
+        if(x==""||isNaN(x)){
+            alert("哥们，这不是数字啊")
+        }
+    }
+</script>
+<input type="button" name="click" value="想知道美神怎么评价你的吗"
+       onclick=myFunction()><br>
+<input type="button" name="change" value="别骗自己了"
+       onclick=changecolor()><br>
+<input type="text" id="input1">
+<input type="button" name="test" value="请点击验证是否为数字"
+       onclick="testnumber()">
+</body>
+</html>

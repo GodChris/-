@@ -1,0 +1,147 @@
+﻿<html>
+<head>
+<title>登录页面</title>
+<script src="js.js"></script>
+<script type="text/javascript">
+function checkInputs()
+{
+var nameInput = document.getElementById("name");
+var nameValue = nameInput.value;
+if(nameValue==null || nameValue.replace(/\s+/g,"")=="")
+{
+alert("对不起,您没有输入姓名!");
+nameInput.focus();
+return false;
+}
+var passwordInput1 = document.getElementById("password1");var passwordValue1 = passwordInput1.value;
+var passwordInput2 = document.getElementById("password2");
+var passwordValue2 = passwordInput2.value;
+if(passwordValue1==null || passwordValue1.replace(/\s+/g,"")==""){
+alert("对不起,您没有输入密码!");
+passwordInput1.focus();
+return false;
+}else if(passwordValue2!=passwordValue1){
+alert("对不起,您输入密码有误!");
+passwordInput2.focus();
+return false;
+}
+var emailInput = document.getElementById("email");
+var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/; if(!myreg.test(emailInput.value)){
+alert('提示\n\n请输入有效的E_mail！');
+emailInput.focus();
+return false;
+}
+var sidInput = document.getElementById("sid");
+var iSum=0,info="";
+var aCity={11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古",21:"辽宁",22:"吉林",23:"黑龙江",31:"上海",32:"江苏",33:"浙江",34:"安徽",35:"福建",
+36:"江西",37:"山东",41:"河南",42:"湖北",43:"湖南",44:"广东",45:"广西",46:"海南",50:"重庆",51:"四川",52:"贵州",53:"云南",54:"西藏",
+61:"陕西",62:"甘肃",63:"青海",64:"宁夏",65:"新疆",71:"台湾",81:"香港",82:"澳门",91:"国外"};
+if(sidInput.length!=15 && sidInput.length!=18)
+alert('提示\n\n请输入有效的身份证！');
+emailInput.focus();
+return false;
+if(!/\d{15}|(\d{17}(\d|x))$/i.test(sidInput))
+alert('提示\n\n请输入有效的身份证！');
+emailInput.focus();
+return false;
+sidInput=sidInput.replace(/x$/i,"a");
+if(aCity[parseInt(sidInput.substr(0,2))]==null)
+alert('提示\n\n请输入有效的身份证！');
+emailInput.focus();
+return false;
+if(sidInput.length==15){sidInput = sidInput.substr(0,6)+"19"+sidInput.substr(6,14);}
+sBirthday=sidInput.substr(6,4)+"-"+Number(sidInput.substr(10,2))+"-"+Number(sidInputr.substr(12,2));
+var d=new Date(sBirthday.replace(/-/g,"/")) ;
+if(sBirthday!=(d.getFullYear()+"-"+ (d.getMonth()+1) + "-" + d.getDate()))
+alert('提示\n\n请输入有效的身份证！');
+emailInput.focus();
+return false;
+if(sidInput.length==18){
+for(var i = 17;i>=0;i--) iSum += (Math.pow(2,i) % 11) * parseInt(sidInput.charAt(17 - i),11) ; if(iSum%11!=1)
+alert('提示\n\n请输入有效的身份证！');
+emailInput.focus(); return false;
+}
+var cityInput = document.getElementById("citySelect"); var cityValue = cityInput.value; if(cityValue=="xuanze"){
+alert('提示\n\n请选择你的籍贯！');
+cityInput.focus();
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body style="background:#98FB98">
+<center>
+<form id="form" action="jieguo.html" method="get" onSubmit="return checkInputs()"> <caption><font color="blue" size="5">用户注册</font></caption> <br />
+<table border="0">
+<tr>
+<th>姓名:</th>
+<td><input type="text" id="name" name="name"/></td>
+</tr>
+<tr>
+<th>密码:</th>
+<td><input type="password" id="password1" name="password"/></td> </tr>
+<tr>
+<th>确认密码:</th>
+<td><input type="password" id="password2" name="password2"/></td> </tr>
+<tr>
+<th>邮箱:</th>
+<td><input type="text" id="email" name="email"/></td>
+</tr>
+<tr>
+<th>身份证:</th>
+<td><input type="text" id="sid" name="sid"/></td>
+<tr>
+<tr> </tr>
+<th>性别:</th>
+<td>
+<input type="radio" name="sex" value="male" /> 男 <input type="radio" name="sex" value="female" /> 女 </td>
+</tr>
+<tr>
+<th>学历:</th>
+<td>
+<input type="radio" name="degree" value="dazhuan" />大专
+<input type="radio" name="degree" value="benke" /> 本科
+<input type="radio" name="degree" value="shuoshi" /> 硕士
+<input type="radio" name="degree" value="boshi" /> 博士 </td>
+</tr>
+<tr>
+<th>籍贯:</th>
+<td>
+<select name="city" id="citySelect">
+<option value="xz" selected="selected">--请选择--</option> <option value="js">江苏</option>
+<option value="zj">浙江</option>
+<option value="gz">广州</option>
+</select>
+</td>
+</tr>
+<tr>
+<tr>
+<th rowspan="1">爱好:</th>
+<td>
+篮球
+<input type="checkbox" name="basketball">
+乒乓球
+<input type="checkbox" name="pingpang"> 足球
+<input type="checkbox" name="football">
+<br/>
+看书
+<input type="checkbox" name="read">
+上网
+<input type="checkbox" name="online">
+玩游戏
+<input type="checkbox" name="game">
+</td>
+</tr>
+<tr>
+<th>自我评价:</th>
+<td><textarea rows="10" cols="30" s></textarea></td>
+</tr>
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="登录"/> <input type="reset" value="取消"/> </td>
+</tr>
+</table>
+</form>
+</center>
+<html

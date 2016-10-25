@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>动画队列功能</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("button#1").click(function() {
+			var div1 = $("#div1");
+			div1.animate({
+				left: '100px'
+			}, "slow");
+			div1.animate({
+				fontSize: '3em'
+			}, "slow");
+		});
+		$("button#2").click(function() {
+			var div2 = $("#div2");
+			div2.animate({
+				height: '300px',
+				opacity: '0.3'
+			}, "slow");
+			div2.animate({
+				width: '300px',
+				opacity: '0.7'
+			}, "slow");
+			div2.animate({
+				height: '100px',
+				opacity: '0.4'
+			}, "slow");
+			div2.animate({
+				width: '100px',
+				opacity: '0.9'
+			}, "slow");
+		});
+	});
+	</script>
+</head>
+<body>
+	<button id=1>开始动画1</button>
+	<br>
+<div id="div1" style="background:#98bf21;height:100px;width:200px;position:absolute;color: red">我爱你</div>
+<br>
+<button id=2 style="position: absolute;top:150px">开始动画2</button>
+<br>
+<div id="div2" style="background:#98bf21;height:100px;width:200px;position:absolute;top: 178px;"></div>
+</body>
+</html>

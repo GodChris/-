@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery学习</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	/*语法：$(selector).action()
+	$(this).hide() - 隐藏当前元素
+    $("p").hide() - 隐藏所有 <p> 元素
+    $("p.test").hide() - 隐藏所有 class="test" 的 <p> 元素
+    $("#test").hide() - 隐藏所有 id="test" 的元素
+    $(document).ready(function()是文档就绪事件，开头写的
+    或者这种写法$(function(){
+    	
+    })
+    */
+		$(document).ready(function(){
+			$("button").click(function(){
+				$(this).hide();
+			});
+			$("p").click(function(){
+				$(this).hide();
+			});
+		});
+		</script>
+	<style type="text/css" media="screen">
+		h2{color: blue;font-size-adjust: 0.58}
+		#1{color:red;font-size: 4;}#2{color: yellow;}
+	</style>
+</head>
+<body>
+<h2>今天天气不错哦</h2>
+<p id=1>原来我们和爱情曾经靠的那么近</p>
+<p id=2>你想多了</p>
+<button type="">你点我啊</button>
+</body>
+</html>

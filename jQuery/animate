@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>动画</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("div").animate({
+					left:'250px',
+					opacity:'0.8',
+					height:'toggle',///height:'+=150px',
+					width:'150px',  ///width:'+=150px'
+					
+				});
+			});
+		});
+		/*$(selector).animate({params},speed,callback);
+		{parms}:定义动画的css属性
+		*/
+	</script>
+</head>
+<body>
+	<button>开始动画</button>
+<p> 如果需要改变位置，需要将元素的 position 属性设置为 relative, fixed, 或 absolute!</p>
+<div style="background:#98bf21;height:100px;width:100px;position:absolute;">
+</div>
+</body>
+</html>

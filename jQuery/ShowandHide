@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>显示和隐藏</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		/*$(document).ready(function(){
+			$("button#show").click(function(){
+				$("p").show(500);
+			});
+			$("button#hide").click(function(){
+				$("p").hide(1000);
+			});
+
+		$(selector).hide(speed,callback)
+		可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+        可选的 callback 参数是隐藏或显示完成后所执行的函数名称
+		});
+        */
+        /*toggle()函数*语法参数与hide()一致*/
+        $(document).ready(function() {
+        	$("button").click(function() {
+        		$("p").toggle();
+        	});
+        });
+	</script>
+</head>
+<body>
+<p style="font-size:6;color: blue">花花世界</p>
+<!--
+<button id="show" type="button">显示</button>
+<button id="hide" type="button">隐藏</button>-->	
+<button type="button">显示/隐藏</button>
+</body>
+</html>
