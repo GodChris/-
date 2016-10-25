@@ -1,0 +1,30 @@
+.exchange_redpacket{position: absolute;left: 3px;}
+#inputss1{
+    height:36px;width: 1358px;margin-top: 2px;border: 0;
+}
+.icon{
+    position: absolute;top: 0;right: 10px; font-size: 36px;
+}
+.redpacket_list1{
+    position:relative;top:46px;
+}
+.redpacket_list2{
+    position:relative;top:52px;
+}
+.redpacket_list3{
+    position:relative;top:58px;
+}
+.redpacket_list4{
+    position:relative;top:64px;
+}
+.area1{
+    width:200px;height: 143px;text-align: center;display:table-cell;
+    vertical-align:middle;border-style: solid; border-width:1px;border-color:  #888888;
+
+}
+.area2{
+    width:1136px;height: 143px;background-color: red;position:absolute;top: 0;left: 203px;border-style: solid; border-width:1px;border-color:  #888888;
+}
+#border{
+    position: relative;left: -16px;
+}

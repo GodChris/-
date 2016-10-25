@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简单计算器</title>
+    <style type="text/css">
+        body{background-color: cornflowerblue;}
+        table{border-left:1 solid #FFFFFF;border-top: 1 solid #FFFFFF;margin-top: 10px}
+        input{border-right:1px solid #000000;border-top: 1px solid #FFFFFF;
+              border-left: 1px solid #FFFFFF;color: #000080;border-bottom: 1px solid #000000;
+              background-color: #d8d8d0;width:40px;height:30px;}
+        td{height:25px;border-bottom: 1 solid #FFFFFF;border-right: 1 solid #FFFFFF;}
+        .input1{border-right: 1px solid #FFFFFF;border-bottom: 1px  solid #FFFFFF;
+                border-left: 1px;text-align: right;width:220px;background-color:#FFFFFF;}
+        .word{
+            margin-top: 100px;color: chartreuse;font-size: large;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var total=0;
+        var Opp="";
+        var FlagNew = false;///新操作数
+        function clearall(){
+            total=0;
+            document.myform.number.value=0;//清除结果
+        }
+        function enternumber(Num){
+            if (FlagNew) {
+                document.myform.number.value = Num;
+                FlagNew = false;
+            }else {
+                if (document.myform.number.value== "0")
+                    document.myform.number.value= Num;
+                else
+                    document.myform.number.value+= Num;
+            }
+        }
+        function Operation (Op) {
+            var Num1 = document.myform.number.value;
+            if (FlagNew && Opp != "=");
+            {
+                FlagNew = true;
+                if ('+' == Opp)
+                    total += parseFloat(Num1);
+                else if ('-' == Opp)
+                    total -= parseFloat(Num1);
+                else if ('/' == Opp)
+                    total /= parseFloat(Num1);
+                else if ('*' == Opp)
+                    total *= parseFloat(Num1);
+                else if ('√x' == Opp)
+                    total = Math.sqrt(parseFloat(Num1));
+                else if ('x²' == Opp)
+                    total = Math.pow(parseFloat(Num1),2);
+                else if ('x³' == Opp)
+                    total = Math.pow(parseFloat(Num1),3);
+                else if ('³√' == Opp)
+                    total = Math.pow(parseFloat(Num1),1/3);
+                else {
+                    total = parseFloat(Num1);
+                }
+                document.myform.number.value = total;
+                Opp = Op;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="word" align="center">
+        <p>&nbsp;</p>
+        <p><strong>欢迎使用大光明牌计算器</strong></p>
+    </div>
+
+<table align="center" width="177" border="0" cellspacing="0" cellpadding="3">
+    <form action="" method="post" name="myform">
+        <tr>
+            <td colspan="5">
+                <input type="text" name="number" value="0" class="input1" >
+            </td>
+        </tr>
+        <tr>
+            <td><input name="num7" type="button" value="7" onclick="enternumber(7)"></td>
+            <td><input name="num8" type="button" value="8" onclick="enternumber(8)"></td>
+            <td><input name="num9" type="button" value="9" onclick="enternumber(9)"></td>
+            <td><input name="num+" type="button" value="+" onclick="Operation('+')"></td>
+            <td><input name="numx²" type="button" value="x²" onclick="Operation('x²')"></td>
+        </tr>
+        <tr>
+            <td><input name="num4" type="button" value="4" onclick="enternumber(4)"></td>
+            <td><input name="num5" type="button" value="5" onclick="enternumber(5)"></td>
+            <td><input name="num6" type="button" value="6" onclick="enternumber(6)"></td>
+            <td><input name="num-" type="button" value="-" onclick="Operation('-')"></td>
+            <td><input name="numx³" type="button" value="x³" onclick="Operation('x³')"></td>
+
+        </tr>
+        <tr>
+            <td><input name="num1" type="button" value="1" onclick="enternumber(1)"></td>
+            <td><input name="num2" type="button" value="2" onclick="enternumber(2)"></td>
+            <td><input name="num3" type="button" value="3" onclick="enternumber(3)"></td>
+            <td><input name="num*" type="button" value="*" onclick="Operation('*')"></td>
+            <td><input name="num√x" type="button" value="√x" onclick="Operation('√x')"></td>
+        </tr>
+        <tr>
+            <td><input name="num0" type="button" value="0" onclick="enternumber(0)"></td>
+            <td><input name="numc" type="button" value="C" onclick="clearall()"></td>
+            <td><input name="num/" type="button" value="/" onclick="Operation('/')"></td>
+            <td><input name="num=" type="button" value="=" onclick="Operation('=')"></td>
+            <td><input name="num³√" type="button" value="³√" onclick="Operation('³√')"></td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>showModalDialog</title>
+</head>
+<body>
+<script>
+    function showWin(){
+        window.open("demo2.html");
+    }
+    function showModalDialogss(){
+        document.getElementById("username").value=window.open("table_data_tables_chooseworkers.html","_blank","status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=400, height=400");
+        ///谷歌已不支持showModalDialog方法；
+        ///document.getElementById("username").value=window.showModalDialog("demo2.html");
+    }
+</script>
+<input type="text" id="username" />
+<input type="button"  value="选择城市" onclick="showModalDialogss()"/>
+<input type="button"  value="打开窗口" onclick="showWin()"/>
+</body>

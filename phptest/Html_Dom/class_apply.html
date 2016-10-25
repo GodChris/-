@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的应用</title>
+</head>
+<body>
+<script>
+    function Person(){
+    var name="张伟";
+    this.age=20;
+    var sex="人妖";
+        var privatefunction=function(){
+            alert(name);
+        }
+        this.diaoyong=function(){
+            privatefunction();
+        }
+    }
+    var p=new Person();
+    alert(p.age);
+    p.diaoyong();
+</script>
+</body>
+</html>

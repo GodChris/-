@@ -1,0 +1,11 @@
+.evaluate{
+    position:absolute;left: 30px;
+}
+#evaluation{
+    overflow-x: hidden;overflow-y: hidden;
+    border:solid 1px #888888;
+    border-radius: 8px;outline:none;}
+
+#inputss{
+    position: relative;top: 60px; width:1302px;height:40px;color:#f7f7f9;background: red; border-radius: 8px;border-style: solid;border-width: 1px;
+}

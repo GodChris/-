@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框操作</title>
+    <script>
+        function chkSelectAll(inss ){
+            var hobbyss = document.getElementsByName("hobby");
+            for(var i=0;i<hobbyss.length;i++){
+               // hobbyss[i].setAttribute("checked",inss);
+              hobbyss[i].checked=inss;
+            }
+        }
+        function reverseChecked(){
+            var hobbyss = document.getElementsByName("hobby");
+            for(var i=0;i<hobbyss.length;i++){
+                hobbyss[i].checked=!hobbyss[i].checked;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>请选择你的爱好：</h1>
+全选/全不选<input type="checkbox" name="hobbys" onclick="chkSelectAll(this.checked)" /><br/>
+<input type="checkbox" name="hobby" value="football"/>足球
+<input type="checkbox" name="hobby" value="basketball" />篮球
+<input type="checkbox" name="hobby" value="swim" />游泳
+<input type="checkbox" name="hobby" value="singing" />唱歌<br/>
+<input type="button" value="全选" onclick="chkSelectAll(true)"/>
+<input type="button" value="全不选" onclick="chkSelectAll(false)"/>
+<input type="button" value="反选" onclick="reverseChecked()"/>
+</body>
+</html>
