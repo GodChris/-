@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <head>
+    <title>表格操作</title>
+    <script>
+        /*
+        function addTR(){
+            var tabNode=document.getElementById("tabinfo");
+            var username=document.getElementById("username").value;
+            var email=document.getElementById("email").value;
+            var age=document.getElementById("age").value;
+            var trNode=document.createElement("tr");
+            var tdUsernameNode=document.createElement("td");
+            tdUsernameNode.innerHTML=username;
+            var tdEmailNode=document.createElement("td");
+            tdEmailNode.innerHTML=email;
+            var tdAgeNode=document.createElement("td");
+            tdAgeNode.innerHTML=age;
+            var tdOpNode=document.createElement("td");
+            tdOpNode.innerHTML="<input type='button' value='删除' onclick=\"deleteTR(this)\"/>";
+            trNode.appendChild(tdUsernameNode);
+            trNode.appendChild(tdEmailNode);
+            trNode.appendChild(tdAgeNode);
+            trNode.appendChild(tdOpNode);
+            tabNode.appendChild(trNode);
+        }
+        function deleteTR(currentNodess){
+            var trNodess= currentNodess.parentNode.parentNode;
+            trNodess.parentNode.removeChild(trNodess);
+        }*/
+        /*用HTML dom写*/
+        function addTR(){
+            var tabNode = document.getElementById("tabinfo");
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var age = document.getElementById("age").value;
+            var trNode = tabNode.insertRow();
+            var tdUsernameNode = trNode.insertCell();
+            tdUsernameNode.innerHTML=username;
+            var tdEmailNode = trNode.insertCell();
+            tdEmailNode.innerHTML=email;
+            var tdAgeNode = trNode.insertCell();
+            tdAgeNode.innerHTML=age;
+            var tdopNode = trNode.insertCell();
+            tdopNode.innerHTML="<input type='button' value='删除' onclick=\"deleteTR(this)\" />";
+        }
+        function deleteTR(currentNodess){
+            var trNodess= currentNodess.parentNode.parentNode;
+            var tabNode=document.getElementById("tabinfo");
+            tabNode.deleteRow(trNodess.rowIndex);
+        }
+
+    </script>
+</head>
+<body>
+<table align="center" cellspacing="10" cellpadding="3">
+   <tr>
+       <td>姓名：<input type="text" id="username"/></td>
+       <td>Email：<input type="text" id="email"/></td>
+       <td>年龄：<input type="text" id="age"/></td>
+   </tr>
+    <tr>
+        <td colspan="3" align="center"><input type="button" id="submit" value="添加" onclick="addTR(this)"/> </td>
+    </tr>
+</table>
+<br/>
+<br/>
+<br/>
+<hr/>
+<table id="tabinfo" align="center" width="500" border="1">
+    <tr>
+        <td>姓名</td>
+        <td>Email</td>
+        <td>年龄</td>
+        <td>操作</td>
+    </tr>
+
+</table>
+
+</body>
+</html>

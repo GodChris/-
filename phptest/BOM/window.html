@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window窗口父子框架传值</title>
+    <style type="text/css">
+        #div1{
+            width:200px;height: 80px;border: 1px dashed red;
+        }
+    </style>
+    <script>
+        function getParentValuess(){
+
+            self.frames["sw1"].document.getElementById("child").value=document.getElementById("parentss").value;
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div><br/>
+<input type="text" id="parentss"/>
+<input type="button" value="父窗口传值" onclick="getParentValuess()"/><br/><br/>
+<iframe src="childwindow.html" name="sw1"></iframe>
+</body>
+</html>

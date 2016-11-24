@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的定义</title>
+</head>
+<body>
+<!--
+//------------------1.私有属性----------------
+  //1.用var声明,不能通过对象名去访问
+//------------------2.公有属性--------------------------
+  //1.公有属性用this声明
+//------------------3.私有方法与公有方法------------------------------------
+  //1.私有的用var声明，公有的用this声明  ，可以同名（可以用公有调用私有）
+//------------------4.静态属性与静态方法----------------------------------------------------------
+  //类名.属性名或方法名定义
+  //访问也是类名.属性名或方法名
+  //不能用对象调用
+//------------------5.构造方法------------------------------------------------------------------
+  //1.无参构造
+  //2.有参构造
+//------------------6.原型方式声明属性与方法-------------------------------------------------------------------------
+  //1.直接原型声明属性和方法
+  //2.为引用类型赋值出问题？
+  //3.有参构造与原型结合一起用!
+//------------------7.直接用Object对象或函数对象加属性与方法-------------------------------------------------------------
+  //1.直接用Object对象，再去定义属性和方法
+  //2.先定义函数对象，再去定义属性和方法
+  //3.json对象方式
+
+-->
+
+<script>
+    //1.私有属性----------------
+    //1.用var声明,不能通过对象名去访问
+    //定义一个类，类名叫Person
+    /*	function Person(){
+     var name="张伟";//var声明的变量，私有属性
+     this.age=20; //公有属性，  用this可以定义一个公有属性
+
+     //私有方法定义
+     var showNi=function (){
+     alert(name);
+     }
+
+     //公有方法
+     this.showNI = function (){
+     showNi();//调用私有方法
+     }
+
+     }
+
+     var person = new Person();
+     //alert(person.name);//不能调用
+     alert(person.age);
+     //person.showNI();
+     */
+
+    ////------------------4.静态属性与静态方法----------------------------------------------------------
+    //类名.属性名或方法名定义
+    //访问也是类名.属性名或方法名
+    //不能用对象调用
+    /*
+     function Person(){
+     this.name="小强";
+     }
+     //静态属性定义时，在function外面定义，定义时，用函数名.属性名=值
+     Person.age=20;
+     Person.isMarried="否";
+
+     //静态方法定义
+     Person.show=function (){
+     //先产生对象，再访问公有属性
+     var p = new Person();
+     alert(p.name);
+     }
+
+     //调用时   类名。属性名
+     //alert(Person.age);
+     //静态方法调用
+     Person.show();
+     */
+
+    //------------------5.构造方法------------------------------------------------------------------
+    //1.无参构造
+
+    /*function Person(){
+
+     }
+     var p = new Person();
+     p.name="李四光";
+     p.show = function(){
+     alert("我是一个新加入方法");
+     }
+     //alert(p.name);
+     //p.show();
+     */
+
+    //2.有参构造
+    /*	function Person(name,age){
+     this.name=name;
+     this.age = age;
+     }
+
+     var person = new Person("凤组",20);
+     alert(person.name+","+person.age);
+
+     */
+
+    //------------------6.原型方式声明属性与方法-------------------------------------------------------------------------
+    //1.直接原型声明属性和方法
+    //2.为引用类型赋值出问题？
+    //3.有参构造与原型结合一起用!
+    /*function getMax(arr){
+     var max=arr[0];
+     for(var i=1;i<arr.length;i++){
+     if(arr[i]>max){
+     max=arr[i];
+     }
+     }
+     return max;
+     }*/
+
+    //-------------通过原型扩展Array中的方法------------------------------
+    /*Array.prototype.getMax = function(){
+     var max=this[0];
+     for(var i=1;i<this.length;i++){
+     if(this[i]>max){
+     max=this[i];
+     }
+     }
+     return max;
+     }
+
+     var arr = new Array(23,56,76,45,89);
+     var result =  arr.getMax();
+     alert(result);
+     //arr.sort();
+
+     //getMax(arr);
+
+     */
+
+    /*	function Person(){
+     this.arr=["aa","bb","mm","sb","nb","2b","bc"];
+     }
+
+
+     var p = new Person();
+     p.arr.push("小三");
+     alert(p.arr);
+
+     var p1 = new Person();
+     alert(p1.arr);
+
+     */
+
+    //json  {属性:值,属性1:值1}
+    //var p =[{name:"小强",age:20,sex:"人妖"},{name:"小强1",age:20,sex:"人妖"},{name:"小强2",age:20,sex:"人妖"}];
+
+    //alert(p[2].name);
+
+    var p = {name:"小姐",age:18,sex:"人妖",show:function(){
+        alert(this.name+","+this.age+","+this.sex);
+    }};
+
+    p.show();
+
+</script>
+</body>
+</html>
